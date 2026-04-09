@@ -8,172 +8,188 @@
 </head>
 <body>
 
-<!-- ============================================================
-     MAIN LAYOUT TABLE — 3 rows: header / content / footer
-     ============================================================ -->
-<table id="layout-main" cellpadding="0" cellspacing="0">
+<div class="wrapper">
 
-  <!-- ══════════════════════════════════════════
-       ROW 1 — HEADER (full width)
-       ══════════════════════════════════════════ -->
-  <tr>
-    <td id="header" colspan="1">
-      <h1>FLV.exe</h1>
-      <p class="subtitle">// votre sous-titre ici //</p>
-    </td>
-  </tr>
+  <!-- ══════════════════════════════════════════════════════════
+       HEADER
+       Replace the div background with your own header image:
+         .header { background-image: url('images/header.png'); background-size: 100%; }
+       ══════════════════════════════════════════════════════════ -->
+  <div class="header">
+    <span class="ht">FLV.exe</span>
+  </div>
 
-  <!-- ══════════════════════════════════════════
-       ROW 2 — THREE COLUMNS
-       ══════════════════════════════════════════ -->
-  <tr>
-    <td>
-      <table id="row2" cellpadding="0" cellspacing="0">
-        <tr>
+  <!-- ══════════════════════════════════════════════════════════
+       THREE-COLUMN FLEX ROW
+       ══════════════════════════════════════════════════════════ -->
+  <div id="flex">
 
-          <!-- ────────────────────────────────────
-               LEFT COLUMN  (180px)
-               ──────────────────────────────────── -->
-          <td id="col-left">
+    <!-- ────────────────────────────────────────────────────
+         LEFT ASIDE — navigation
+         ──────────────────────────────────────────────────── -->
+    <aside class="left">
+      <nav class="nav">
 
-            <!-- WIN98 BOX: MENU -->
-            <div class="win98-box">
-              <div class="win98-titlebar">// menu //</div>
-              <div class="win98-body">
-                <div class="placeholder">
-                  <!-- LIENS DE NAVIGATION ICI -->
-                </div>
-              </div>
-            </div>
+        <!-- MAIN NAV LINKS -->
+        <a href="#">profil</a>
+        <a href="#">livre d'or</a>
+        <a href="#">à propos</a>
+        <a href="#">blog</a>
+        <a href="#">sites</a>
+        <a href="#">graphiques</a>
+        <a href="#">galerie</a>
 
-            <!-- 88x31 BADGE PLACEHOLDERS -->
-            <table class="badges-row" cellpadding="0" cellspacing="0">
-              <tr>
-                <td class="badge-cell">
-                  <span class="badge-placeholder"><!-- BADGE ICI --></span>
-                </td>
-                <td class="badge-cell">
-                  <span class="badge-placeholder"><!-- BADGE ICI --></span>
-                </td>
-              </tr>
-            </table>
+        <!-- COLLAPSIBLE SECTION — OC / UNIVERS -->
+        <details class="details">
+          <summary>univers OC</summary>
+          <a href="#"><!-- LIEN ICI --></a>
+          <a href="#"><!-- LIEN ICI --></a>
+        </details>
 
-          </td>
-          <!-- /col-left -->
+        <!-- COLLAPSIBLE SECTION — SHRINES -->
+        <details class="details">
+          <summary>shrines</summary>
+          <a href="#"><!-- SHRINE ICI --></a>
+          <a href="#"><!-- SHRINE ICI --></a>
+        </details>
 
-          <!-- ────────────────────────────────────
-               CENTER COLUMN  (flexible)
-               ──────────────────────────────────── -->
-          <td id="col-center">
+        <!-- COLLAPSIBLE SECTION — AUTRE -->
+        <details class="details">
+          <summary>autre</summary>
+          <a href="#"><!-- LIEN ICI --></a>
+          <a href="#"><!-- LIEN ICI --></a>
+        </details>
 
-            <!-- NAV BAR (top of center) -->
-            <div id="nav-bar">
-              <!-- BARRE DE NAVIGATION ICI -->
-            </div>
+      </nav>
 
-            <!-- MAIN 2-SUB-COLUMN AREA -->
-            <table id="center-content-table" cellpadding="0" cellspacing="0">
-              <tr>
+      <!-- 88×31 BADGES -->
+      <div class="box" style="margin-top:10px;">
+        <div class="badges">
+          <!-- BADGE ICI --><span class="badge">badge</span>
+          <!-- BADGE ICI --><span class="badge">badge</span>
+          <!-- BADGE ICI --><span class="badge">badge</span>
+          <!-- BADGE ICI --><span class="badge">badge</span>
+          <!-- BADGE ICI --><span class="badge">badge</span>
+          <!-- BADGE ICI --><span class="badge">badge</span>
+        </div>
+      </div>
 
-                <!-- SUB-COL LEFT — blue -->
-                <td id="sub-col-left">
-                  <div class="placeholder" style="min-height:260px;">
-                    <!-- CONTENU PRINCIPAL ICI -->
-                  </div>
-                </td>
+    </aside>
+    <!-- /aside.left -->
 
-                <!-- SUB-COL RIGHT — split into 2 rows -->
-                <td id="sub-col-right">
-                  <table width="100%" cellpadding="0" cellspacing="0">
-                    <tr>
-                      <!-- BLOC 2 — red -->
-                      <td id="bloc2">
-                        <div class="placeholder" style="min-height:130px;">
-                          <!-- BLOC 2 ICI -->
-                        </div>
-                      </td>
-                    </tr>
-                    <tr>
-                      <!-- BLOC 3 — purple -->
-                      <td id="bloc3">
-                        <div class="placeholder" style="min-height:130px;">
-                          <!-- BLOC 3 ICI -->
-                        </div>
-                      </td>
-                    </tr>
-                  </table>
-                </td>
+    <!-- ────────────────────────────────────────────────────
+         MAIN CONTENT
+         ──────────────────────────────────────────────────── -->
+    <main>
 
-              </tr>
-            </table>
-            <!-- /center-content-table -->
+      <!-- WELCOME BOX -->
+      <div class="box">
+        <div class="content">
+          <p class="section-title">WELCOME ! ようこそ！</p>
 
-            <!-- PARAGRAPH BAR (full width, green) -->
-            <div id="paragraph-bar">
-              <div class="placeholder">
-                <!-- PARAGRAPHE ICI -->
-              </div>
-            </div>
+          <!-- IMAGE STAMPS ICI -->
+          <div class="placeholder" style="min-height:50px; margin-bottom:6px;">
+            <!-- STAMPS / IMAGES DE PRÉSENTATION ICI -->
+          </div>
 
-          </td>
-          <!-- /col-center -->
+          <!-- TEXTE D'INTRO + AVERTISSEMENT -->
+          <div class="placeholder" style="min-height:60px;">
+            <!-- TEXTE DE BIENVENUE ICI -->
+            <!-- ex: "Ce site est optimisé pour PC 1920×1080 à 125% / thèmes matures réservés aux +16 ans" -->
+          </div>
+        </div>
+      </div>
 
-          <!-- ────────────────────────────────────
-               RIGHT COLUMN  (180px)
-               ──────────────────────────────────── -->
-          <td id="col-right">
+      <!-- UPDATES BOX -->
+      <div class="box">
+        <div class="content scroll" style="height:280px;">
+          <p class="section-title">MISES À JOUR</p>
 
-            <!-- WIDGET 1 — large, cyan title bar -->
-            <div class="win98-box widget-large">
-              <div class="win98-titlebar cyan">widget 1</div>
-              <div class="win98-body">
-                <div class="placeholder">
-                  <!-- WIDGET 1 ICI -->
-                </div>
-              </div>
-            </div>
+          <!-- LISTE DES MISES À JOUR ICI -->
+          <div class="placeholder" style="min-height:200px;">
+            <!-- FORMAT SUGGÉRÉ :
+              <p><b>jj/mm/aaaa</b> — description de la mise à jour</p>
+              <p><b>jj/mm/aaaa</b> — description de la mise à jour</p>
+              ...
+            -->
+          </div>
+        </div>
+      </div>
 
-            <!-- WIDGET 2 — medium, red title bar -->
-            <div class="win98-box widget-medium">
-              <div class="win98-titlebar red">widget 2</div>
-              <div class="win98-body">
-                <div class="placeholder">
-                  <!-- WIDGET 2 ICI -->
-                </div>
-              </div>
-            </div>
+      <!-- TO-DO BOX -->
+      <div class="box">
+        <div class="content">
+          <p class="section-title">TO DO</p>
 
-            <!-- WIDGET 3 — medium, red title bar -->
-            <div class="win98-box widget-medium">
-              <div class="win98-titlebar red">widget 3</div>
-              <div class="win98-body">
-                <div class="placeholder">
-                  <!-- WIDGET 3 ICI -->
-                </div>
-              </div>
-            </div>
+          <!-- LISTE TODO ICI -->
+          <div class="placeholder" style="min-height:80px;">
+            <!-- FORMAT SUGGÉRÉ :
+              <ul>
+                <li>[ ] héberger toutes les images sur le site</li>
+                <li>[ ] optimiser la galerie</li>
+                <li>[ ] ajouter favicon</li>
+                ...
+              </ul>
+            -->
+          </div>
+        </div>
+      </div>
 
-          </td>
-          <!-- /col-right -->
+    </main>
+    <!-- /main -->
 
-        </tr>
-      </table>
-    </td>
-  </tr>
-  <!-- /row2 -->
+    <!-- ────────────────────────────────────────────────────
+         RIGHT ASIDE — widgets
+         ──────────────────────────────────────────────────── -->
+    <aside class="right">
 
-  <!-- ══════════════════════════════════════════
-       ROW 3 — FOOTER (full width)
-       ══════════════════════════════════════════ -->
-  <tr>
-    <td id="footer">
-      <!-- FOOTER ICI -->
-      &copy; FLV.exe — tous droits réservés
-    </td>
-  </tr>
+      <!-- WIDGET 1 — large -->
+      <div class="box">
+        <p class="section-title" style="color:#030429; font-size:9px; padding:3px;">widget 1</p>
+        <div class="placeholder" style="min-height:140px;">
+          <!-- WIDGET 1 ICI -->
+        </div>
+      </div>
 
-</table>
-<!-- /layout-main -->
+      <!-- WIDGET 2 — medium -->
+      <div class="box">
+        <p class="section-title" style="color:#030429; font-size:9px; padding:3px;">widget 2</p>
+        <div class="placeholder" style="min-height:70px;">
+          <!-- WIDGET 2 ICI -->
+        </div>
+      </div>
+
+      <!-- WIDGET 3 — medium -->
+      <div class="box">
+        <p class="section-title" style="color:#030429; font-size:9px; padding:3px;">widget 3</p>
+        <div class="placeholder" style="min-height:70px;">
+          <!-- WIDGET 3 ICI -->
+        </div>
+      </div>
+
+      <!-- DIVIDER / EXTRA WIDGET -->
+      <div class="box">
+        <div class="placeholder" style="min-height:40px;">
+          <!-- DIVIDER / IMAGE DÉCORATIVE ICI -->
+        </div>
+      </div>
+
+    </aside>
+    <!-- /aside.right -->
+
+  </div>
+  <!-- /#flex -->
+
+  <!-- ══════════════════════════════════════════════════════════
+       FOOTER
+       ══════════════════════════════════════════════════════════ -->
+  <div class="footer">
+    <!-- FOOTER ICI -->
+    flv.exe &mdash; fait avec &hearts; &mdash; neocities
+  </div>
+
+</div>
+<!-- /.wrapper -->
 
 </body>
 </html>
