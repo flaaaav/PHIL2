@@ -1,0 +1,207 @@
+/* ===== GOOGLE FONTS ===== */
+@import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
+
+/* ===== RESET & BASE ===== */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* ===== TILED DARK BACKGROUND ===== */
+body {
+  background-color: #1a1a2e;
+  background-image: radial-gradient(circle, #3a3a5c 1px, transparent 1px);
+  background-size: 12px 12px;
+  font-family: Arial, sans-serif;
+  font-size: 12px;
+  color: #cccccc;
+}
+
+/* ===== MAIN LAYOUT TABLE ===== */
+#layout-main {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+/* ===== ROW 1 — HEADER ===== */
+#header {
+  background-color: #0d0d1a;
+  text-align: center;
+  padding: 20px 10px;
+  border-bottom: 3px solid #444488;
+}
+
+#header h1 {
+  font-family: 'Press Start 2P', monospace;
+  font-size: 2.2em;
+  color: #ffffff;
+  text-shadow: 3px 3px 0px #ff00ff, -1px -1px 0px #00ffff;
+  letter-spacing: 4px;
+}
+
+#header .subtitle {
+  font-family: 'Press Start 2P', monospace;
+  font-size: 0.55em;
+  color: #aaaacc;
+  margin-top: 10px;
+  letter-spacing: 2px;
+}
+
+/* ===== ROW 3 — FOOTER ===== */
+#footer {
+  background-color: #0d0d1a;
+  text-align: center;
+  padding: 14px 10px;
+  border-top: 3px solid #444488;
+  font-family: 'Press Start 2P', monospace;
+  font-size: 0.5em;
+  color: #666688;
+  letter-spacing: 1px;
+}
+
+/* ===== ROW 2 WRAPPER ===== */
+#row2 {
+  width: 100%;
+  border-collapse: collapse;
+  vertical-align: top;
+}
+
+#col-left,
+#col-center,
+#col-right {
+  vertical-align: top;
+  padding: 8px;
+}
+
+#col-left  { width: 180px; }
+#col-right { width: 180px; }
+
+/* ===== WIN98 BOX ===== */
+.win98-box {
+  border: 2px outset #c0c0c0;
+  background-color: #c0c0c0;
+  margin-bottom: 8px;
+}
+
+.win98-titlebar {
+  background: linear-gradient(to right, #000080, #1084d0);
+  color: #ffffff;
+  font-size: 10px;
+  font-weight: bold;
+  padding: 3px 6px;
+  letter-spacing: 1px;
+  user-select: none;
+}
+
+.win98-titlebar.cyan {
+  background: linear-gradient(to right, #006666, #00aaaa);
+}
+
+.win98-titlebar.red {
+  background: linear-gradient(to right, #880000, #cc2222);
+}
+
+.win98-body {
+  padding: 6px;
+  background-color: #c0c0c0;
+  min-height: 40px;
+  border: 1px inset #888888;
+  border-top: none;
+}
+
+/* ===== PLACEHOLDER / EMPTY ZONES ===== */
+.placeholder {
+  border: 2px dotted #ff66ff;
+  min-height: 30px;
+  background-color: rgba(255, 255, 255, 0.03);
+}
+
+/* ===== BADGES ROW ===== */
+.badges-row {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 4px;
+}
+
+.badge-cell {
+  padding: 2px;
+}
+
+.badge-placeholder {
+  width: 88px;
+  height: 31px;
+  border: 2px dotted #ff66ff;
+  display: block;
+  background-color: rgba(255,255,255,0.05);
+}
+
+/* ===== CENTER COLUMN NAV BAR ===== */
+#nav-bar {
+  background-color: #222244;
+  padding: 5px 8px;
+  border: 2px outset #555577;
+  font-size: 11px;
+  color: #ccccff;
+  letter-spacing: 1px;
+  border-bottom: none;
+}
+
+/* ===== CENTER MAIN CONTENT AREA ===== */
+#center-content-table {
+  width: 100%;
+  border-collapse: collapse;
+  border: 2px outset #555577;
+}
+
+#sub-col-left {
+  background-color: #0000aa;
+  vertical-align: top;
+  width: 55%;
+  border: 2px outset #0000cc;
+}
+
+#sub-col-right {
+  vertical-align: top;
+  width: 45%;
+  padding: 0;
+}
+
+#bloc2 {
+  background-color: #cc2222;
+  border: 2px outset #dd4444;
+  border-bottom: 1px solid #ff6666;
+}
+
+#bloc3 {
+  background-color: #884488;
+  border: 2px outset #aa66aa;
+}
+
+#sub-col-left .placeholder,
+#bloc2 .placeholder,
+#bloc3 .placeholder {
+  border-color: rgba(255,255,255,0.4);
+  min-height: 120px;
+}
+
+/* ===== GREEN PARAGRAPH BAR ===== */
+#paragraph-bar {
+  background-color: #558833;
+  border: 2px outset #77aa44;
+  padding: 8px;
+}
+
+#paragraph-bar .placeholder {
+  border-color: rgba(255,255,255,0.5);
+  min-height: 28px;
+}
+
+/* ===== RIGHT COLUMN WIDGET SIZES ===== */
+.win98-box.widget-large .win98-body {
+  min-height: 140px;
+}
+
+.win98-box.widget-medium .win98-body {
+  min-height: 60px;
+}

@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>FLV.exe</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+<!-- ============================================================
+     MAIN LAYOUT TABLE — 3 rows: header / content / footer
+     ============================================================ -->
+<table id="layout-main" cellpadding="0" cellspacing="0">
+
+  <!-- ══════════════════════════════════════════
+       ROW 1 — HEADER (full width)
+       ══════════════════════════════════════════ -->
+  <tr>
+    <td id="header" colspan="1">
+      <h1>FLV.exe</h1>
+      <p class="subtitle">// votre sous-titre ici //</p>
+    </td>
+  </tr>
+
+  <!-- ══════════════════════════════════════════
+       ROW 2 — THREE COLUMNS
+       ══════════════════════════════════════════ -->
+  <tr>
+    <td>
+      <table id="row2" cellpadding="0" cellspacing="0">
+        <tr>
+
+          <!-- ────────────────────────────────────
+               LEFT COLUMN  (180px)
+               ──────────────────────────────────── -->
+          <td id="col-left">
+
+            <!-- WIN98 BOX: MENU -->
+            <div class="win98-box">
+              <div class="win98-titlebar">// menu //</div>
+              <div class="win98-body">
+                <div class="placeholder">
+                  <!-- LIENS DE NAVIGATION ICI -->
+                </div>
+              </div>
+            </div>
+
+            <!-- 88x31 BADGE PLACEHOLDERS -->
+            <table class="badges-row" cellpadding="0" cellspacing="0">
+              <tr>
+                <td class="badge-cell">
+                  <span class="badge-placeholder"><!-- BADGE ICI --></span>
+                </td>
+                <td class="badge-cell">
+                  <span class="badge-placeholder"><!-- BADGE ICI --></span>
+                </td>
+              </tr>
+            </table>
+
+          </td>
+          <!-- /col-left -->
+
+          <!-- ────────────────────────────────────
+               CENTER COLUMN  (flexible)
+               ──────────────────────────────────── -->
+          <td id="col-center">
+
+            <!-- NAV BAR (top of center) -->
+            <div id="nav-bar">
+              <!-- BARRE DE NAVIGATION ICI -->
+            </div>
+
+            <!-- MAIN 2-SUB-COLUMN AREA -->
+            <table id="center-content-table" cellpadding="0" cellspacing="0">
+              <tr>
+
+                <!-- SUB-COL LEFT — blue -->
+                <td id="sub-col-left">
+                  <div class="placeholder" style="min-height:260px;">
+                    <!-- CONTENU PRINCIPAL ICI -->
+                  </div>
+                </td>
+
+                <!-- SUB-COL RIGHT — split into 2 rows -->
+                <td id="sub-col-right">
+                  <table width="100%" cellpadding="0" cellspacing="0">
+                    <tr>
+                      <!-- BLOC 2 — red -->
+                      <td id="bloc2">
+                        <div class="placeholder" style="min-height:130px;">
+                          <!-- BLOC 2 ICI -->
+                        </div>
+                      </td>
+                    </tr>
+                    <tr>
+                      <!-- BLOC 3 — purple -->
+                      <td id="bloc3">
+                        <div class="placeholder" style="min-height:130px;">
+                          <!-- BLOC 3 ICI -->
+                        </div>
+                      </td>
+                    </tr>
+                  </table>
+                </td>
+
+              </tr>
+            </table>
+            <!-- /center-content-table -->
+
+            <!-- PARAGRAPH BAR (full width, green) -->
+            <div id="paragraph-bar">
+              <div class="placeholder">
+                <!-- PARAGRAPHE ICI -->
+              </div>
+            </div>
+
+          </td>
+          <!-- /col-center -->
+
+          <!-- ────────────────────────────────────
+               RIGHT COLUMN  (180px)
+               ──────────────────────────────────── -->
+          <td id="col-right">
+
+            <!-- WIDGET 1 — large, cyan title bar -->
+            <div class="win98-box widget-large">
+              <div class="win98-titlebar cyan">widget 1</div>
+              <div class="win98-body">
+                <div class="placeholder">
+                  <!-- WIDGET 1 ICI -->
+                </div>
+              </div>
+            </div>
+
+            <!-- WIDGET 2 — medium, red title bar -->
+            <div class="win98-box widget-medium">
+              <div class="win98-titlebar red">widget 2</div>
+              <div class="win98-body">
+                <div class="placeholder">
+                  <!-- WIDGET 2 ICI -->
+                </div>
+              </div>
+            </div>
+
+            <!-- WIDGET 3 — medium, red title bar -->
+            <div class="win98-box widget-medium">
+              <div class="win98-titlebar red">widget 3</div>
+              <div class="win98-body">
+                <div class="placeholder">
+                  <!-- WIDGET 3 ICI -->
+                </div>
+              </div>
+            </div>
+
+          </td>
+          <!-- /col-right -->
+
+        </tr>
+      </table>
+    </td>
+  </tr>
+  <!-- /row2 -->
+
+  <!-- ══════════════════════════════════════════
+       ROW 3 — FOOTER (full width)
+       ══════════════════════════════════════════ -->
+  <tr>
+    <td id="footer">
+      <!-- FOOTER ICI -->
+      &copy; FLV.exe — tous droits réservés
+    </td>
+  </tr>
+
+</table>
+<!-- /layout-main -->
+
+</body>
+</html>
