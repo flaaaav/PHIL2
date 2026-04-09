@@ -1,207 +1,289 @@
 /* ===== GOOGLE FONTS ===== */
-@import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Kosugi+Maru&family=Press+Start+2P&display=swap');
 
-/* ===== RESET & BASE ===== */
+/* ===== RESET ===== */
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
 
-/* ===== TILED DARK BACKGROUND ===== */
+/* ===== BODY — Windows XP Bliss-style gradient background ===== */
 body {
-  background-color: #1a1a2e;
-  background-image: radial-gradient(circle, #3a3a5c 1px, transparent 1px);
-  background-size: 12px 12px;
-  font-family: Arial, sans-serif;
-  font-size: 12px;
-  color: #cccccc;
+  /* Sky + green rolling hill approximation */
+  background:
+    radial-gradient(ellipse 110% 38% at 50% 74%, #5dba2e 0%, #3da015 35%, transparent 68%),
+    linear-gradient(180deg,
+      #3d9fd8 0%,
+      #60b8e8 28%,
+      #a0d4f0 48%,
+      #cce8f8 56%,
+      #a0d060 58%,
+      #5ab828 64%,
+      #3a9818 75%,
+      #2c800e 100%
+    );
+  background-attachment: fixed;
+  min-height: 100vh;
+  font-family: 'Kosugi Maru', sans-serif;
+  color: white;
+  font-size: 15px;
+  line-height: 1.2;
+  text-align: left;
 }
 
-/* ===== MAIN LAYOUT TABLE ===== */
-#layout-main {
-  width: 100%;
-  border-collapse: collapse;
+/* ===== WRAPPER ===== */
+.wrapper {
+  width: 900px;
+  height: auto;
+  padding: 5px;
+  background-color: transparent;
+  border-radius: 10px;
+  margin: 0 auto;
 }
 
-/* ===== ROW 1 — HEADER ===== */
-#header {
-  background-color: #0d0d1a;
-  text-align: center;
-  padding: 20px 10px;
-  border-bottom: 3px solid #444488;
+/* ===== HEADER ===== */
+.header {
+  height: 100px;
+  border: ridge #679aab;
+  position: relative;
+  overflow: hidden;
+  /* Dark gradient behind title — replace with background-image when you have a header image */
+  background: linear-gradient(135deg, #0a0a2a 0%, #1a2a4a 40%, #0d1a3a 70%, #060e20 100%);
+  border-bottom: 3px solid #679aab;
 }
 
-#header h1 {
+/* Placeholder dotted overlay so header zone is visible */
+.header::after {
+  content: '<!-- EN-TÊTE ICI (image background) -->';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 9px;
+  color: rgba(100,160,200,0.4);
+  border: 2px dotted rgba(100,160,200,0.3);
+  padding: 4px 8px;
+  white-space: nowrap;
+  pointer-events: none;
+}
+
+.ht {
+  position: absolute;
+  bottom: -10px;
+  left: 8px;
+  color: white;
+  font-size: 40px;
+  font-weight: bold;
   font-family: 'Press Start 2P', monospace;
-  font-size: 2.2em;
-  color: #ffffff;
-  text-shadow: 3px 3px 0px #ff00ff, -1px -1px 0px #00ffff;
-  letter-spacing: 4px;
-}
-
-#header .subtitle {
-  font-family: 'Press Start 2P', monospace;
-  font-size: 0.55em;
-  color: #aaaacc;
-  margin-top: 10px;
+  text-shadow:
+    -2px 0   #3134aa,
+     0  2px  #383738,
+     2px 0   #3134aa,
+     0  -2px #383738,
+     0  0  8px #3134aa;
   letter-spacing: 2px;
 }
 
-/* ===== ROW 3 — FOOTER ===== */
-#footer {
-  background-color: #0d0d1a;
-  text-align: center;
-  padding: 14px 10px;
-  border-top: 3px solid #444488;
-  font-family: 'Press Start 2P', monospace;
-  font-size: 0.5em;
-  color: #666688;
-  letter-spacing: 1px;
+/* ===== THREE-COLUMN FLEX LAYOUT ===== */
+#flex {
+  display: flex;
 }
 
-/* ===== ROW 2 WRAPPER ===== */
-#row2 {
-  width: 100%;
-  border-collapse: collapse;
-  vertical-align: top;
+aside {
+  width: 220px;
+  padding: 10px;
+  flex-shrink: 0;
 }
 
-#col-left,
-#col-center,
-#col-right {
-  vertical-align: top;
-  padding: 8px;
+main {
+  flex: 1;
+  order: 2;
+  margin-top: 17px;
+  min-width: 0;
 }
 
-#col-left  { width: 180px; }
-#col-right { width: 180px; }
+.left  { order: 1; }
+.right { order: 3; }
 
-/* ===== WIN98 BOX ===== */
-.win98-box {
-  border: 2px outset #c0c0c0;
-  background-color: #c0c0c0;
-  margin-bottom: 8px;
+/* ===== SCROLLABLE ZONES ===== */
+.scroll {
+  overflow: auto;
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+.scroll::-webkit-scrollbar { display: none; }
+
+/* ===== BOX (gingham-style ridge border container) ===== */
+.box {
+  border: #679aab ridge;
+  margin: 5px;
+  padding: 5px;
+  /* CSS gingham/plaid pattern — replace with background-image for photo texture */
+  background-color: #c8dde8;
+  background-image:
+    repeating-linear-gradient(0deg,   rgba(103,154,171,0.25) 0px, rgba(103,154,171,0.25) 1px, transparent 1px, transparent 20px),
+    repeating-linear-gradient(90deg,  rgba(103,154,171,0.25) 0px, rgba(103,154,171,0.25) 1px, transparent 1px, transparent 20px),
+    repeating-linear-gradient(0deg,   rgba(103,154,171,0.12) 0px, rgba(103,154,171,0.12) 10px, transparent 10px, transparent 20px),
+    repeating-linear-gradient(90deg,  rgba(103,154,171,0.12) 0px, rgba(103,154,171,0.12) 10px, transparent 10px, transparent 20px);
+  background-size: 20px 20px;
 }
 
-.win98-titlebar {
-  background: linear-gradient(to right, #000080, #1084d0);
-  color: #ffffff;
-  font-size: 10px;
+/* ===== CONTENT AREA (inside box) ===== */
+.content {
+  /* Subtle dot/lace pattern — replace with background-image for fabric texture */
+  background-color: #e8f0f8;
+  background-image:
+    radial-gradient(circle, rgba(3,4,41,0.08) 1px, transparent 1px),
+    radial-gradient(circle, rgba(3,4,41,0.04) 1px, transparent 1px);
+  background-size: 10px 10px, 20px 20px;
+  background-position: 0 0, 5px 5px;
+  border: 1px solid #030429;
+  color: #030429;
+  padding: 5px;
+  margin: 5px;
+}
+
+.content a,
+.content a:visited {
+  color: blue;
+  transition: letter-spacing 0.5s ease, font-style 0.5s ease;
+  text-decoration: none;
+}
+
+.content a:hover {
+  letter-spacing: 3px;
+  font-style: italic;
+}
+
+/* ===== NAV BUTTONS ===== */
+.nav {
+  line-height: 1.5;
+  text-align: left;
+}
+
+.nav a,
+.nav a:visited,
+.nav summary {
+  padding-left: 5px;
+  width: 150px;
+  height: 27px;
   font-weight: bold;
-  padding: 3px 6px;
+  font-family: 'Kosugi Maru', sans-serif;
+  font-size: 13px;
+  background: linear-gradient(89deg, #679aab, transparent);
+  border: 1px solid black;
+  border-radius: 4px;
+  text-decoration: none;
+  text-shadow:
+     1px  1px 0px #000,
+    -1px -1px 0px #000,
+     1px -1px 0px #000,
+    -1px  1px 0px #000;
+  display: inline-flex;
+  align-items: center;
+  color: white;
+  text-align: left;
+  margin: 5px;
+  transition: letter-spacing 0.5s ease, font-style 0.5s ease;
+  cursor: pointer;
+  list-style: none;
+}
+
+/* Sub-nav links (inside <details>) */
+.details a,
+.details a:visited {
+  padding-left: 5px;
+  width: 140px;
+  height: 25px;
+  font-weight: bold;
+  font-family: 'Kosugi Maru', sans-serif;
+  font-size: 12px;
+  background: linear-gradient(89deg, #93adcb, transparent);
+  border: 1px solid black;
+  border-radius: 4px;
+  text-decoration: none;
+  text-shadow:
+     1px  1px 0px #000,
+    -1px -1px 0px #000,
+     1px -1px 0px #000,
+    -1px  1px 0px #000;
+  display: inline-flex;
+  align-items: center;
+  color: white;
+  text-align: left;
+  margin: 3px 5px;
+  transition: letter-spacing 0.5s ease, font-style 0.5s ease;
+}
+
+.nav a:hover,
+.details a:hover {
+  color: #030429;
+  text-shadow:
+     1px  1px 0px #fff,
+    -1px -1px 0px #fff,
+     1px -1px 0px #fff,
+    -1px  1px 0px #fff;
+  text-decoration: underline;
+  text-decoration-style: wavy;
+  letter-spacing: 1.25px;
+  font-style: italic;
+}
+
+/* Remove default <details> marker */
+.nav details summary { list-style: none; }
+.nav details summary::-webkit-details-marker { display: none; }
+
+/* ===== SECTION HEADINGS inside content ===== */
+.section-title {
+  font-family: 'Press Start 2P', monospace;
+  font-size: 11px;
+  color: #030429;
+  border-bottom: 2px solid #679aab;
+  padding-bottom: 4px;
+  margin-bottom: 6px;
   letter-spacing: 1px;
-  user-select: none;
 }
 
-.win98-titlebar.cyan {
-  background: linear-gradient(to right, #006666, #00aaaa);
-}
-
-.win98-titlebar.red {
-  background: linear-gradient(to right, #880000, #cc2222);
-}
-
-.win98-body {
-  padding: 6px;
-  background-color: #c0c0c0;
-  min-height: 40px;
-  border: 1px inset #888888;
-  border-top: none;
-}
-
-/* ===== PLACEHOLDER / EMPTY ZONES ===== */
+/* ===== PLACEHOLDER ZONES (dotted border, visible but empty) ===== */
 .placeholder {
-  border: 2px dotted #ff66ff;
+  border: 2px dotted #679aab;
   min-height: 30px;
-  background-color: rgba(255, 255, 255, 0.03);
+  background-color: rgba(103,154,171,0.08);
+  padding: 4px;
+  color: rgba(3,4,41,0.35);
+  font-size: 11px;
 }
 
-/* ===== BADGES ROW ===== */
-.badges-row {
-  width: 100%;
-  border-collapse: collapse;
-  margin-top: 4px;
+/* ===== 88x31 BADGE PLACEHOLDERS ===== */
+.badges {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 3px;
+  padding: 3px;
 }
 
-.badge-cell {
-  padding: 2px;
-}
-
-.badge-placeholder {
+.badge {
   width: 88px;
   height: 31px;
-  border: 2px dotted #ff66ff;
-  display: block;
-  background-color: rgba(255,255,255,0.05);
+  border: 2px dotted #679aab;
+  background-color: rgba(103,154,171,0.15);
+  display: inline-block;
+  font-size: 8px;
+  color: rgba(3,4,41,0.4);
+  text-align: center;
+  line-height: 31px;
 }
 
-/* ===== CENTER COLUMN NAV BAR ===== */
-#nav-bar {
-  background-color: #222244;
-  padding: 5px 8px;
-  border: 2px outset #555577;
-  font-size: 11px;
-  color: #ccccff;
+/* ===== FOOTER ===== */
+.footer {
+  text-align: center;
+  padding: 14px 10px;
+  font-family: 'Press Start 2P', monospace;
+  font-size: 9px;
+  color: rgba(255,255,255,0.6);
   letter-spacing: 1px;
-  border-bottom: none;
-}
-
-/* ===== CENTER MAIN CONTENT AREA ===== */
-#center-content-table {
-  width: 100%;
-  border-collapse: collapse;
-  border: 2px outset #555577;
-}
-
-#sub-col-left {
-  background-color: #0000aa;
-  vertical-align: top;
-  width: 55%;
-  border: 2px outset #0000cc;
-}
-
-#sub-col-right {
-  vertical-align: top;
-  width: 45%;
-  padding: 0;
-}
-
-#bloc2 {
-  background-color: #cc2222;
-  border: 2px outset #dd4444;
-  border-bottom: 1px solid #ff6666;
-}
-
-#bloc3 {
-  background-color: #884488;
-  border: 2px outset #aa66aa;
-}
-
-#sub-col-left .placeholder,
-#bloc2 .placeholder,
-#bloc3 .placeholder {
-  border-color: rgba(255,255,255,0.4);
-  min-height: 120px;
-}
-
-/* ===== GREEN PARAGRAPH BAR ===== */
-#paragraph-bar {
-  background-color: #558833;
-  border: 2px outset #77aa44;
-  padding: 8px;
-}
-
-#paragraph-bar .placeholder {
-  border-color: rgba(255,255,255,0.5);
-  min-height: 28px;
-}
-
-/* ===== RIGHT COLUMN WIDGET SIZES ===== */
-.win98-box.widget-large .win98-body {
-  min-height: 140px;
-}
-
-.win98-box.widget-medium .win98-body {
-  min-height: 60px;
+  border-top: 2px ridge #679aab;
+  margin-top: 10px;
+  text-shadow: 1px 1px 2px #030429;
 }
